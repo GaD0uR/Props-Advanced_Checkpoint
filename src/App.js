@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import ProductTable from "./ProductTable";
+import * as ReactBootStrap from "react-bootstrap";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Table Products</h1>
+      <ReactBootStrap.Table>
+        <ProductTable data={products} />
+      </ReactBootStrap.Table>
     </div>
   );
 }
+
+const products = [
+  {
+    price: 100,
+    name: "iphone",
+    category: "Electronics",
+  },
+  {
+    price: 150,
+    name: "jeans",
+    category: "Clothes",
+  },
+  {
+    price: 540,
+    name: "Samsung",
+    category: "Electronics",
+  },
+];
 
 export default App;
